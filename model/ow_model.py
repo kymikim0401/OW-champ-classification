@@ -13,7 +13,7 @@ class OWmodel(nn.Module):
             nn.Conv2d(8, 20, kernel_size=3, stride=1),
             nn.BatchNorm2d(20),
             nn.ReLU(inplace=True),
-            nn.MaxPool2d(kernel_size=4, stride=1) #expected dimension = 20x247x247
+            nn.MaxPool2d(kernel_size=4, stride=1)
         )
         
         self.linear=nn.Sequential(
@@ -23,7 +23,7 @@ class OWmodel(nn.Module):
         
     def forward(self, x):
         y = self.cnn(x)
-        y = y.view(y.size(0), -1)
+        y = y.view(y.size(0), -1) # y.size(0)=batch size 
         z = self.linear(y)
         
         

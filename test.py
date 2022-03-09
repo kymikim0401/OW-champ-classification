@@ -8,7 +8,7 @@ from glob import glob
 
 
 if __name__ == '__main__':
-    image = Image.open('test20.png').convert('RGB')
+    image = Image.open('test1.png').convert('RGB')
     re = image.resize((256,256))
     names = glob('heroes/*')
     t = transforms.Compose([

@@ -16,7 +16,7 @@ if __name__ == '__main__':
     loader = DataLoader(data, batch_size = Batch_size)
     loss_criteria = nn.CrossEntropyLoss()
 
-    model = OWmodel().cuda()
+    model = ResOWModel().cuda()
     optimizer = optim.Adagrad(model.parameters(), lr=0.0002)
 
     for epoch in range(Epoch):
