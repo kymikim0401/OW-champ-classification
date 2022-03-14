@@ -10,10 +10,6 @@ class ResOWModel(nn.Module):
 
         n_ft = self.resnet.fc.in_features
         self.resnet.fc = nn.Linear(n_ft, 28)
-
-        #self.softmax = nn.Sequential(
-        #    nn.Softmax(dim=1)
-        
         
     def forward(self, x):
         x = self.resnet(x)
