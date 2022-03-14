@@ -10,8 +10,8 @@ class ResOWModel(nn.Module):
 
         n_ft = self.resnet.fc.in_features
         self.resnet.fc = nn.Linear(n_ft, 28)
+        #Line 11-12: Fine-tuning Resnet 50 models / 28 = number of class (= number of champs in OW)
         
     def forward(self, x):
         x = self.resnet(x)
-        #x_softmax = self.softmax(x)
         return x
